@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public void searchClick(){
         String searchString = searchText.getText().toString();
         String param = "geo:?q=";
-        if (searchString.indexOf(", ") != -1 & searchString.matches("-{0,1}[0-9]{1,3}.[0-9]*\"{1} {1}" +
-                                                                          "-{0,1}[0-9]{1,3}.[0-9]*")){
+        if (searchString.indexOf(", ") != -1 & searchString.matches("[\\d,. ]+")){
             param = "geo:";
         }
         Uri objectName = Uri.parse(param + searchString);
